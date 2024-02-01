@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { InfoPaginaService } from '@services/info-pagina.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class FooterComponent {
   
   anio: number = new Date().getFullYear();
-
-  constructor(){}
+  InfoPaginaService: InfoPaginaService = inject(InfoPaginaService);
+  // constructor(public infoPaginaService: InfoPaginaService) { }
 
 }
