@@ -6,6 +6,7 @@ import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from './shared/footer/footer.component';
 import { InfoPaginaService } from './services/info-pagina.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductosService } from '@services/productos.service';
 
 @Component({
     selector: 'app-root',
@@ -20,9 +21,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       FooterComponent, 
       HttpClientModule,
     ],
-    providers: [InfoPaginaService],
+    providers: 
+    [
+      InfoPaginaService,
+      ProductosService
+    ],
 })
 export class AppComponent  {
-  constructor( public infoPaginaService: InfoPaginaService){  }
+  constructor( public infoPaginaService: InfoPaginaService,
+               public productosServie: ProductosService ){  }
   // InfoPaginaService: InfoPaginaService = inject(InfoPaginaService);
 }
