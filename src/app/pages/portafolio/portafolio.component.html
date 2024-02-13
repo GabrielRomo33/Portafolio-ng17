@@ -28,10 +28,12 @@
       @if(!productosService.cargando){
         <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
           @for (producto of productosService.productos; track $index){
-            <a href="portfolio-item.html" class="animate__animated animate__fadeIn  rk-item ae-masonry__item">
+            <!-- <a routerLink="[/item, producto.cod ]" routerLinkActive="router-link-active"  class="animate__animated animate__fadeIn  rk-item ae-masonry__item"> -->
+              <!-- href="item/{{producto.cod}}" routerLink="item/{{producto.cod}}"-->
+            <a routerLink="/item/{{producto.cod}}" routerLinkActive="router-link-active"  class="animate__animated animate__fadeIn  rk-item ae-masonry__item">
               <img src="assets/productos/{{ producto.url }}.jpg" alt="">
               <div class="item-meta">
-                <h2>{{ producto.titulo }}</h2>
+                <h2>{{ producto.titulo }}</h2> 
                 <p>{{ producto.categoria }}</p>
               </div>
             </a>
